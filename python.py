@@ -6,6 +6,7 @@ def primeChecking(n, primes):
         return primes[n]
 
 # loop to check numbers if each of it is prime or not
+# O(n^3)
     for num in range(2, math.floor(math.sqrt(n)+1)):
         if n % num == 0:
           # if it's mod of 2 equal 0 then it's not prime and return false for that number in array of rotations number
@@ -18,17 +19,21 @@ def primeChecking(n, primes):
 
 def main():
     print("Checking input...")
+	# O(1)
     count = 0
     primes = {}
 
 # loop for numbers from 2 to 1000000
+# O(n)
     for num in range (2, 1000000):
         boolPrime = False
 
         # change number from int to string
+		# O(1)
         num = str(num)
 
         # loop to get all rotations of each number
+		# O(n^2)
         for i in range(len(num)):
             if primeChecking(int(num[i:]+num[:i]), primes):
                 boolPrime = True
@@ -42,3 +47,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Total Complexity Time = O(1)+O(n)+O(1)+O(n^2)+O(n^3)
+#                       = O(1+n+n^2+n^3)

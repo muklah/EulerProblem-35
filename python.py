@@ -17,7 +17,7 @@ def primeChecking(n, primes):
     return True
 
 
-def main():
+def checking():
     print("Checking input...")
 	# O(1)
     count = 0
@@ -43,10 +43,12 @@ def main():
         # if all rotations of number are prime then increase counter by one
         if boolPrime:
             count += 1
+    return count
+			
     print ("Number of prime numbers:",count)
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+  print(checking())
 
 
 # Total Complexity Time = O(1)+O(n)+O(1)+O(n^2)+O(n^3)
